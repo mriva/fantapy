@@ -26,11 +26,6 @@ virtus_secchi_players = [
     {"name": "Felipe Anderson", "role": "attaccante", "score": 6},
 ]
 
-# teams = [
-#     "Atletico Mendozzi",
-#     "Virtus Secchi",
-# ]
-
 teams_data = [
     {
         "team_name": "Atletico Mendozzi",
@@ -44,30 +39,24 @@ teams_data = [
     }
 ]
 
+# def ask_score(team_index):
+    # team_name = teams[team_index]
+    # score = input(f"Inserisci il punteggio ottenuto da {team_name}: ")
+    # return int(score)
 
-# teams_data = {
-#     "Atletico Mendozzi": "Sofia",
-#     "Virtus Secchi": "Tommaso",
-# }
+# def score_to_goals_old(score):
+    # if score >= 90:
+        # return 5
+    # elif score >= 84:
+        # return 4
+    # elif score >= 78:
+        # return 3
+    # elif score >= 72:
+        # return 2
+    # elif score >= 66:
+        # return 1
 
-def ask_score(team_index):
-    team_name = teams[team_index]
-    score = input(f"Inserisci il punteggio ottenuto da {team_name}: ")
-    return int(score)
-
-def score_to_goals_old(score):
-    if score >= 90:
-        return 5
-    elif score >= 84:
-        return 4
-    elif score >= 78:
-        return 3
-    elif score >= 72:
-        return 2
-    elif score >= 66:
-        return 1
-
-    return 0
+    # return 0
 
 def score_to_goals(score):
     if score < 60:
