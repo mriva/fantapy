@@ -44,28 +44,12 @@ teams_data = [
     # score = input(f"Inserisci il punteggio ottenuto da {team_name}: ")
     # return int(score)
 
-# def score_to_goals_old(score):
-    # if score >= 90:
-        # return 5
-    # elif score >= 84:
-        # return 4
-    # elif score >= 78:
-        # return 3
-    # elif score >= 72:
-        # return 2
-    # elif score >= 66:
-        # return 1
-
-    # return 0
-
 def score_to_goals(score):
     if score < 60:
         return 0
 
     return (score - 60) // 6
 
-# vogliamo una funzione che prende in input i due score, e ci stampa questo:
-# Il risultato è Squadra_a 1 - Squadra_b 0    
 def print_match_result(team_0_score, team_1_score):
     team_0_goals = score_to_goals(team_0_score)
     team_1_goals = score_to_goals(team_1_score)
@@ -97,10 +81,6 @@ def print_match_result(team_0_score, team_1_score):
         print(f"Ha vinto lo sport")
 
 
-# team_0_score = ask_score(0)
-# team_1_score = ask_score(1)
-
-# la funzione prende un team (cioè un dictionary) e controlla se ci sono troppi attaccanti
 def check_team(team):
     forward_number = 0
 
@@ -110,8 +90,6 @@ def check_team(team):
 
     if forward_number > 3:
         print("La squadra non è valida")
-
-    
 
 
 team_0_score = 0
