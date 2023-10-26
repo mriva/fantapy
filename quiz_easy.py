@@ -18,4 +18,23 @@ question = {
     ]
 }
 
-prova = "test"
+print(question["question"])
+number = 0
+for answer in question["answers"]:
+    number = number + 1
+    print(str(number) + ". " + answer["text"])
+
+input = input("Scegli la risposta corretta: ")
+
+correct_answer = 0
+
+index = 0
+for answer in question["answers"]:
+    index += 1
+    if answer["correct"] == True:
+        correct_answer = str(index)
+
+if input == correct_answer:
+    print("Complimenti, risposta esatta")
+else:
+    print("Sei stato bocciato")
