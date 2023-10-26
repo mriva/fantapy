@@ -17,3 +17,5 @@ question = {
         { "text": "Una carrozza trainata da uno o più cavalli", "correct": False }
     ]
 }
+
+prova = "test"
