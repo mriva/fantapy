@@ -11,30 +11,29 @@
 question = {
     "question": "Che cosa è un autoveicolo?",
     "answers": [
-        { "text": "Un mezzo semovente a pedali di almeno 3,5 tonnellate", "correct": False },
-        { "text": "Qualsiasi veicolo a motore proprio, con almeno quattro ruote, atto a circolare su strada ordinaria indipendentemente da impianti fissi", "correct": True },
-        { "text": "Un veicolo composto da due motocicli saldati insieme", "correct": False },
-        { "text": "Una carrozza trainata da uno o più cavalli", "correct": False }
+        {"text": "Un mezzo semovente a pedali di almeno 3,5 tonnellate", "correct": False},
+        {"text": "Qualsiasi veicolo a motore proprio, con almeno quattro ruote, atto a circolare su strada ordinaria indipendentemente da impianti fissi", "correct": True},
+        {"text": "Un veicolo composto da due motocicli saldati insieme", "correct": False},
+        {"text": "Una carrozza trainata da uno o più cavalli", "correct": False}
     ]
 }
 
+def get_correct_answer(answers):
+    index = 0
+    for answer in answers:
+        index += 1
+        if answer["correct"] == True:
+            return str(index)
+
 print(question["question"])
-number = 0
-for answer in question["answers"]:
-    number = number + 1
-    print(str(number) + ". " + answer["text"])
+
+for i, answer in enumerate(question["answers"]):
+    print(f"{i + 1}: {answer['text']}")
 
 input = input("Scegli la risposta corretta: ")
 
-correct_answer = 0
-
-index = 0
-for answer in question["answers"]:
-    index += 1
-    if answer["correct"] == True:
-        correct_answer = str(index)
-
-if input == correct_answer:
+if input == get_correct_answer(question["answers"]):
     print("Complimenti, risposta esatta")
 else:
     print("Sei stato bocciato")
+
