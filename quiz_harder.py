@@ -36,3 +36,32 @@ questions = [
         ]
     }
 ]
+
+
+def print_question(question_to_print):
+    print(question_to_print["question"])
+
+
+def print_answers(question_to_print):
+    for i, answer in enumerate(question_to_print["answers"]):
+        print(f"{i + 1}: {answer['text']}")
+
+def get_correct_answer(answers):
+    index = 0
+    for answer in answers:
+        index += 1
+        if answer["correct"] == True:
+            return str(index)
+
+correct_answers = 0
+for question in questions:
+    print_question(question)
+    print_answers(question)
+
+    response = input("Inserisci la tua risposta: ")
+    if response == get_correct_answer(question["answers"]):
+        correct_answers += 1
+
+print(f"Hai ottenuto {correct_answers} risposte corrette e {4 - correct_answers} risposte sbagliate")
+
+
